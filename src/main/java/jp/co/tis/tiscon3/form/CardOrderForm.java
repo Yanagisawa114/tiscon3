@@ -9,14 +9,31 @@ public class CardOrderForm extends FormBase {
 
     private static final long serialVersionUID = 1L;
 
+   @NotBlank
+    @Size(max = 60)
+    private String kanjiSei;
+
     @NotBlank
     @Size(max = 60)
-    private String kanjiName;
+    private String kanjiMei;
+
+
+
 
     @NotBlank
     @Size(max = 90)
     @Pattern(regexp = "^[ァ-ヶー 　]*$")
-    private String kanaName;
+    private String kanaSei;
+
+    @NotBlank
+    @Size(max = 90)
+    @Pattern(regexp = "^[ァ-ヶー 　]*$")
+    private String kanaMei;
+
+
+
+
+
 
     @NotBlank
     @Size(max = 120)
