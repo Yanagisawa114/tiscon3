@@ -7,6 +7,7 @@ import jp.co.tis.tiscon3.dao.CardOrderDao;
 import jp.co.tis.tiscon3.entity.CardOrder;
 import jp.co.tis.tiscon3.form.CardOrderForm;
 import kotowari.component.TemplateEngine;
+import org.codehaus.groovy.runtime.StringGroovyMethods;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -81,7 +82,21 @@ public class CardOrderController {
         if (form.hasErrors()) {
             return templateEngine.render("cardOrder/user", "form", form);
         }
+
+
+
+
         CardOrder cardOrder = beans.createFrom(form, CardOrder.class);
+        String sei = form.getKanjiSei();
+        String mei = form.getKanjiMei();
+        cardOrder.setKanjiName(sei+mei);
+        String sei2 = form.getKanaSei();
+        String mei2 = form.getKanaMei();
+        cardOrder.setKanaName(sei2+mei2);
+
+
+
+
 
         cardOrderDao.insert(cardOrder);
 
