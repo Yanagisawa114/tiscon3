@@ -18,9 +18,10 @@ public class CardOrderForm extends FormBase {
     @Pattern(regexp = "^[ァ-ヶー 　]*$")
     private String kanaName;
 
+
     @NotBlank
     @Size(max = 120)
-    @Pattern(regexp = "^[a-zA-Z 　]*$")
+    @Pattern(regexp = "^[A-Z  ]*$")
     private String alphabetName;
 
     @NotBlank
