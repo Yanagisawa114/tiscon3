@@ -116,6 +116,15 @@ public class CardOrderController {
         String mail1 = form.getEmailAddress1();
         String mail2 = form.getEmailAddress2();
         cardOrder.setEmailAddress(mail1+mail2);
+        String ezip1 = form.getEmployerZipCode1();
+        String ezip2 = form.getEmployerZipCode2();
+        cardOrder.setEmployerZipCode(ezip1+ezip2);
+        String emobile1 = form.getEmployerPhoneNumber1();
+        String emobile2 = form.getEmployerPhoneNumber2();
+        String emobeil3 = form.getEmployerPhoneNumber3();
+        cardOrder.setEmployerPhoneNumber(emobile1+emobile2+emobeil3);
+
+
 
         cardOrderDao.insert(cardOrder);
 
