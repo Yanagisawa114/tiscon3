@@ -36,15 +36,35 @@ public class CardOrderForm extends FormBase {
 
 
 
-    @NotBlank
-    @Size(max = 120)
-    @Pattern(regexp = "^[A-Z  ]*$")
-    private String alphabetName;
+ @NotBlank
+ @Size(max = 120)
+ @Pattern(regexp = "^[A-Z  ]*$")
+ private String alphabetSei;
 
-    @NotBlank
+ @NotBlank
+ @Size(max = 120)
+ @Pattern(regexp = "^[A-Z  ]*$")
+ private String alphabetMei;
+
+
+
+
+
+ @NotBlank
     @Size(max = 10)
-    @Pattern(regexp = "\\d{4}/\\d{1,2}/\\d{1,2}$")
-    private String dateOfBirth;
+    @Pattern(regexp = "\\d{4}$")
+    private String dateOfBirth1;
+
+ @NotBlank
+ @Size(max = 10)
+ @Pattern(regexp = "\\d{1,2}$")
+ private String dateOfBirth2;
+
+ @NotBlank
+ @Size(max = 10)
+ @Pattern(regexp = "\\d{1,2}$")
+ private String dateOfBirth3;
+
 
     @NotBlank
     @Size(max = 6)
@@ -52,8 +72,14 @@ public class CardOrderForm extends FormBase {
 
     @NotBlank
     @Size(max = 8)
-    @Pattern(regexp = "^[0-9]{3}-[0-9]{4}$")
-    private String zipCode;
+    @Pattern(regexp = "^[0-9]{3}$")
+    private String zipCode1;
+ @NotBlank
+ @Size(max = 8)
+ @Pattern(regexp = "^[0-9]{4}$")
+ private String zipCode2;
+
+
 
     @NotBlank
     @Size(max = 255)
@@ -61,18 +87,42 @@ public class CardOrderForm extends FormBase {
 
     @NotBlank
     @Size(max = 13)
-    @Pattern(regexp = "^0[0-9]{1,3}-[0-9]{2,4}-[0-9]{4}$")
-    private String homePhoneNumber;
+    @Pattern(regexp = "^0[0-9]{1,3}$")
+    private String homePhoneNumber1;
+ @NotBlank
+ @Size(max = 13)
+ @Pattern(regexp = "^[0-9]{2,4}$")
+ private String homePhoneNumber2;
+ @NotBlank
+ @Size(max = 13)
+ @Pattern(regexp = "^[0-9]{4}$")
+ private String homePhoneNumber3;
+
+
+
+
 
     @Size(max = 13)
-    @Pattern(regexp = "^((070|080|090)-[0-9]{4}-[0-9]{4})?$")
-    private String mobilePhoneNumber;
+    @Pattern(regexp = "^((070|080|090))?$")
+    private String mobilePhoneNumber1;
+ @Size(max = 13)
+ @Pattern(regexp = "^[0-9]{4}$")
+ private String mobilePhoneNumber2;
+ @Size(max = 13)
+ @Pattern(regexp = "^[0-9]{4}$")
+ private String mobilePhoneNumber3;
+
+
+
 
     @NotBlank
     @Size(max = 255)
     @Email
-    private String emailAddress;
-
+    private String emailAddress1;
+ @NotBlank
+ @Size(max = 255)
+ @Email
+ private String emailAddress2;
     @NotBlank
     @Size(max = 20)
     private String spouse;

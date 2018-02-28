@@ -93,10 +93,28 @@ public class CardOrderController {
         String sei2 = form.getKanaSei();
         String mei2 = form.getKanaMei();
         cardOrder.setKanaName(sei2+mei2);
+        String sei3 = form.getAlphabetSei();
+        String mei3 = form.getAlphabetMei();
+        cardOrder.setAlphabetName(sei3+mei3);
 
-
-
-
+        String Birth1 = form.getDateOfBirth1();
+        String Birth2 = form.getDateOfBirth2();
+        String Birgh3 = form.getDateOfBirth3();
+        cardOrder.setDateOfBirth(Birth1+Birth2+Birgh3);
+        String zip1 = form.getZipCode1();
+        String zip2 = form.getZipCode2();
+        cardOrder.setZipCode(zip1+zip2);
+        String home1 = form.getHomePhoneNumber1();
+        String home2 = form.getHomePhoneNumber2();
+        String home3 = form.getHomePhoneNumber3();
+        cardOrder.setHomePhoneNumber(home1+home2+home3);
+        String mobile1 = form.getMobilePhoneNumber1();
+        String mobile2 = form.getMobilePhoneNumber2();
+        String mobeil3 = form.getMobilePhoneNumber3();
+        cardOrder.setHomePhoneNumber(mobile1+mobile2+mobeil3);
+        String mail1 = form.getEmailAddress1();
+        String mail2 = form.getEmailAddress2();
+        cardOrder.setEmailAddress(mail1+mail2);
 
         cardOrderDao.insert(cardOrder);
 
