@@ -32,18 +32,38 @@
                                 <label>お勤め先名</label>
                                 <input type="text" name="employerName" th:value="${form.employerName}"/>
                             </div>
-                            <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
-                                <label>お勤め先郵便番号</label>
-                                <input type="text" name="employerZipCode" th:value="${form.employerZipCode}"/>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('employerName')}">
+                                <li th:text="${form.getErrors('employerName')[0]}"></li>
+                            </ul>
+
+                            <div class="field" th:classappend="${form.hasErrors('employerZipCode1')} ? 'error'">
+                                <label>お勤め先郵便番号（半角）</label>
+                                <input type="text" class="number3" name="employerZipCode1" th:value="${form.employerZipCode1}"/>
+                            ー <input type="text" class="number3" name="employerZipCode2" th:value="${form.employerZipCode2}"/>
                             </div>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('employerZipCode1')}">
+                                <li th:text="${form.getErrors('employerZipCode1')[0]}"></li>
+                            </ul>
+
+
                             <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
                                 <label>お勤め先住所</label>
                                 <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
                             </div>
-                            <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
-                                <label>お勤め先電話番号</label>
-                                <input type="text" name="employerPhoneNumber" th:value="${form.employerPhoneNumber}"/>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('employerAddress')}">
+                                <li th:text="${form.getErrors('employerAddress')[0]}"></li>
+                            </ul>
+
+                            <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber1')} ? 'error'">
+                                <label>お勤め先電話番号（半角）</label>
+                                <input type="text" class="number3" name="employerPhoneNumber1" th:value="${form.employerPhoneNumber1}"/>
+                                ー <input type="text" class="number3" name="employerPhoneNumber2" th:value="${form.employerPhoneNumber2}"/>
+                                ー <input type="text" class="number3" name="employerPhoneNumber3" th:value="${form.employerPhoneNumber3}"/>
                             </div>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('employerPhoneNumber1')}">
+                                <li th:text="${form.getErrors('')[employerPhoneNumber10]}"></li>
+                            </ul>
+
                             <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
                                 <label>業種</label>
                                 <select name="industryType">
@@ -59,6 +79,10 @@
                                     <option value="その他" th:checked="${form.industryType}=='その他'">その他・不明</option>
                                 </select>
                             </div>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('industryType')}">
+                                <li th:text="${form.getErrors('industryType')[0]}"></li>
+                            </ul>
+
                             <div class="field" th:classappend="${form.hasErrors('capital')} ? 'error'">
                                 <label>資本金</label>
                                 <select name="capital">
@@ -69,6 +93,10 @@
                                     <option name="capital" th:field="*{form.capital}" value="0" th:checked="${form.capital}=='0'">その他</option>
                                 </select>
                             </div>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('capital')}">
+                                <li th:text="${form.getErrors('capital')[0]}"></li>
+                            </ul>
+
                             <div class="field" th:classappend="${form.hasErrors('companySize')} ? 'error'">
                                 <label>お勤め先の規模（従業員数）</label>
                                 <select name="companySize">
@@ -80,18 +108,33 @@
                                     <option th:field="${form.companySize}" value="500" th:checked="${form.companySize}=='500'">５００名以上</option>
                                 </select>
                             </div>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('companySize')}">
+                                <li th:text="${form.getErrors('companySize')[0]}"></li>
+                            </ul>
+
                             <div class="field" th:classappend="${form.hasErrors('department')} ? 'error'">
                                 <label>所属部署</label>
                                 <input type="text" name="department" th:value="${form.department}"/>
                             </div>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('department')}">
+                                <li th:text="${form.getErrors('department')[0]}"></li>
+                            </ul>
+
                             <div class="field" th:classappend="${form.hasErrors('position')} ? 'error'">
                                 <label>役職</label>
                                 <input type="text" name="position" th:value="${form.position}"/>
                             </div>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('position')}">
+                                <li th:text="${form.getErrors('position')[0]}"></li>
+                            </ul>
+
                             <div class="field" th:classappend="${form.hasErrors('employeeLength')} ? 'error'">
-                                <label>勤続年数</label>
+                                <label>勤続年数（半角）</label>
                                 <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"/><span class="unit">年</span >
                             </div>
+                            <ul class="ui red basic label" th:if="${form.hasErrors('employeeLength')}">
+                                <li th:text="${form.getErrors('employeeLength')[0]}"></li>
+                            </ul>
 
                             <!--/*"ご本人"の入力値を引き回すための隠し項目*/-->
                             <input type="hidden" name="kanjiSei" th:value="${form.kanjiSei}"/>
@@ -99,14 +142,33 @@
 
                             <input type="hidden" name="kanaSei" th:value="${form.kanaSei}"/>
                             <input type="hidden" name="kanaMei" th:value="${form.kanaMei}"/>
-                            <input type="hidden" name="alphabetName" th:value="${form.alphabetName}"/>
+
+                            <input type="hidden" name="alphabetSei" th:value="${form.alphabetSei}"/>
+                            <input type="hidden" name="alphabetMei" th:value="${form.alphabetMei}"/>
+
                             <input type="hidden" name="gender" th:value="${form.gender}"/>
-                            <input type="hidden" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
-                            <input type="hidden" name="zipCode" th:value="${form.zipCode}"/>
+                            <input type="hidden" name="dateOfBirth1" th:value="${form.dateOfBirth1}"/>
+                            <input type="hidden" name="dateOfBirth2" th:value="${form.dateOfBirth2}"/>
+                            <input type="hidden" name="dateOfBirth3" th:value="${form.dateOfBirth3}"/>
+
+
+                            <input type="hidden" name="zipCode1" th:value="${form.zipCode1}"/>
+                            <input type="hidden" name="zipCode2" th:value="${form.zipCode2}"/>
+
                             <input type="hidden" name="address" th:value="${form.address}"/>
-                            <input type="hidden" name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
-                            <input type="hidden" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"/>
-                            <input type="hidden" name="emailAddress" th:value="${form.emailAddress}"/>
+                            <input type="hidden" name="homePhoneNumber1" th:value="${form.homePhoneNumber1}"/>
+                            <input type="hidden" name="homePhoneNumber2" th:value="${form.homePhoneNumber2}"/>
+                            <input type="hidden" name="homePhoneNumber3" th:value="${form.homePhoneNumber3}"/>
+                            <input type="hidden" name="mobilePhoneNumber1" th:value="${form.mobilePhoneNumber1}"/>
+                            <input type="hidden" name="mobilePhoneNumber2" th:value="${form.mobilePhoneNumber2}"/>
+                            <input type="hidden" name="mobilePhoneNumber3" th:value="${form.mobilePhoneNumber3}"/>
+
+
+                            <input type="hidden" name="emailAddress1" th:value="${form.emailAddress1}"/>
+                            <input type="hidden" name="emailAddress2" th:value="${form.emailAddress2}"/>
+
+
+
                             <input type="hidden" name="spouse" th:value="${form.spouse}"/>
                             <input type="hidden" name="houseClassification" th:value="${form.houseClassification}"/>
                             <input type="hidden" name="debt" th:value="${form.debt}"/>
