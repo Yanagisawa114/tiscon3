@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<head>
+    <title>申請内容確認</title>
+
+    <script src="/assets/js/metrixir.client.js"></script>
+
+    <style type="text/css">
+
+    </style>
+
+</head>
+<body>
+<div class="full height image" layout:fragment="content">
+    <div class="ui main container">
+        <div class="ui information container">
+            <div class="ui middle center aligned grid">
+                <div class="center column">
+                    <div class="ui segment metrixir">
+                        <h1 class="ui aligned header teal">お申込み情報の確認</h1>
+
+                        <form class="ui form" method="post" action="/cardOrder/">
+
+                        <h1>ユーザー情報</h1>
+
+                        <table margin="0px auto 50px auto">
+                            <tr>
+                                <th align="right" padding ="">お名前(漢字) : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">お名前(カタカナ) : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">お名前(ローマ字) : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">性別 : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">生年月日 : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">郵便番号 : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">ご住所 : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">自宅電話番号 : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">携帯電話番号 : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">メールアドレス : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">配偶者有無 : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">お住まい : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">ローン等のお借り入れ金額 : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">昨年の所得 : </th><th></th>
+                            </tr>
+                            <tr>
+                                <th align="right">ご職業 : </th><th></th>
+                            </tr>
+                        </table>
+
+                        <div class="ui column grid">
+                            <div class="eight wide column left aligned">
+                                <!--/*戻る場合、formの送り先を強制的に書き換える*/-->
+                                <a class="ui button angle left icon" href="user">入力をやり直す</a>
+                            </div>
+
+
+                            <div class="eight wide column right aligned">
+                                <a class="ui teal button angle right icon" href="completed">申し込みを完了する</a>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

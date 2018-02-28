@@ -54,10 +54,22 @@ public class CardOrderController {
      * @return お勤め先登録ページresponse
      */
     public HttpResponse inputJob(CardOrderForm form) {
-        // エラーを出したくないので強制的にエラーを消す.
         form.setErrors(null);
 
         return templateEngine.render("cardOrder/job", "form", form);
+    }
+
+    /**
+     * 確認画面を表示します.
+     *
+     */
+
+    public HttpResponse confirm(CardOrderForm form) {
+        if (form.hasErrors()) {
+            return templateEngine.render("cardOrder/user", "form", form);
+        }
+
+        return templateEngine.render("cardOrder/confirm",  "form", form);
     }
 
     /**
@@ -84,6 +96,7 @@ public class CardOrderController {
         }
 
 
+        System.out.println("ok");
 
 
         CardOrder cardOrder = beans.createFrom(form, CardOrder.class);
