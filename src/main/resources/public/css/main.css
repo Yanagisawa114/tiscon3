@@ -58,8 +58,16 @@ ul.label {
 .number2 {
     text-align: left;
     vertical-align: middle !important;
-    width: 100px !important;
+    width: 200px !important;
 }
+
+.number3 {
+    text-align: left;
+    vertical-align: middle !important;
+    width: 50px !important;
+}
+
+
 
 
 .unit {
