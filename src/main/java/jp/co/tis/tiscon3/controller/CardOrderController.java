@@ -53,6 +53,16 @@ public class CardOrderController {
      *
      * @return お勤め先登録ページresponse
      */
+
+    public HttpResponse confirm(CardOrderForm form) {
+        // エラーを出したくないので強制的にエラーを消す.
+        if (form.hasErrors()) {
+            return templateEngine.render("cardOrder/job", "form", form);
+        }
+
+        return templateEngine.render("cardOrder/confirm", "form", form);
+    }
+
     public HttpResponse inputJob(CardOrderForm form) {
         // エラーを出したくないので強制的にエラーを消す.
         if (form.hasErrors()) {

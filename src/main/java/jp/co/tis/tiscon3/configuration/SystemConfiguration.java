@@ -22,7 +22,7 @@ public class SystemConfiguration implements enkan.config.EnkanSystemFactory {
             "jackson", new JacksonBeansConverter(),
             "flyway", new FlywayMigration(),
             "template", new ThymeleafLayoutTemplateEngine(),
-            "datasource", new HikariCPComponent(OptionMap.of("uri", "jdbc:h2:mem:test")),
+            "datasource", new HikariCPComponent(OptionMap.of("uri", "jdbc:h2:file:/Users/goseicho/Desktop/test")),
             "app", new ApplicationComponent(ApplicationConfiguration.class.getName()),
             "http", builder(new UndertowComponent())
                 .set(UndertowComponent::setPort, Env.getInt("PORT", 3000))
