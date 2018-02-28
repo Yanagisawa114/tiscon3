@@ -20,30 +20,38 @@
                         <form class="ui form" method="post" action="/cardOrder/user">
 
                             <!-- /*エラーがあれば表示する*/ -->
-                            <!-- <ul class="ui red basic label" th:if="${form.hasErrors()}">
+                            <!-- <ul class="ui red basic label" th:if="${form.hasErrors('kanziSei')}">
                                 <li th:each="error : ${form.getErrors().entrySet()}" th:text="${error.value}"></li>
                             </ul> -->
 
                             <div class="ui horizontal divider">ご本人について</div>
 
-
-
-
                                 <div class="field" th:classappend="${form.hasErrors('kanjiSei')} ? 'error'">
                                 <label>お名前　性　（漢字）</label>
                                 <input type="text" name="kanjiSei" th:value="${form.kanjiSei}"/>
                             </div>
+
+                            <ul class="ui red basic label" th:if="${form.hasErrors('kanjiMei')}">
+                                <li th:text="${form.getErrors('kanjiMei')[0]}"></li>
+                            </ul>
+
                             <div class="field" th:classappend="${form.hasErrors('kanjiMei')} ? 'error'">
                                 <label>お名前　名　（漢字）</label>
                                 <input type="text" name="kanjiMei" th:value="${form.kanjiMei}"/>
                             </div>
 
-
+                            <ul class="ui red basic label" th:if="${form.hasErrors('kanjiMei')}">
+                                <li th:text="${form.getErrors('kanjiMei')[0]}"></li>
+                            </ul>
 
                             <div class="field" th:classappend="${form.hasErrors('kanaSei')} ? 'error'">
                                 <label>お名前（カナ）</label>
                                 <input type="text" name="kanaSei" th:value="${form.kanaSei}"/>
                             </div>
+
+                            <ul class="ui red basic label" th:if="${form.hasErrors('kanaSei')}">
+                                <li th:text="${form.getErrors('kanaSei')[0]}"></li>
+                            </ul>
 
                             <div class="field" th:classappend="${form.hasErrors('kanaMei')} ? 'error'">
 
@@ -58,7 +66,7 @@
                             </div>
 
                             <ul class="ui red basic label" th:if="${form.hasErrors('alphabetName')}">
-                                入力が正しくありません
+                                <li th:text="${form.getErrors('alphabetName')[0]}"></li>
                             </ul>
 
                             <div class="field" th:classappend="${form.hasErrors('gender')} ? 'error'">
@@ -69,6 +77,7 @@
 
                             <ul class="ui red basic label" th:if="${form.hasErrors('kanjiName')}">
                                 入力が正しくありません
+
                             </ul>
 
                             <div class="field" th:classappend="${form.hasErrors('dateOfBirth')} ? 'error'">
@@ -85,8 +94,8 @@
                                 <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
                             </div>
 
-                            <ul class="ui red basic label" th:if="${form.hasErrors('kanjiName')}">
-                                入力が正しくありません
+                            <ul class="ui red basic label" th:if="${form.hasErrors('kanjiMei')}">
+                                <li th:text="${form.getErrors('kanjiMei')[0]}"></li>
                             </ul>
 
                             <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
