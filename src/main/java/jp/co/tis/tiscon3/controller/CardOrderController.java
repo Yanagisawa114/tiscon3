@@ -58,6 +58,7 @@ public class CardOrderController {
         if (form.hasErrors()) {
             return templateEngine.render("cardOrder/user", "form", form);
         }
+
         return templateEngine.render("cardOrder/job", "form", form);
     }
 

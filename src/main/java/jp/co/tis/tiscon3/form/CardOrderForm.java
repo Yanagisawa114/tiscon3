@@ -38,12 +38,12 @@ public class CardOrderForm extends FormBase {
 
  @NotBlank
  @Size(max = 120)
- @Pattern(regexp = "^[A-Z  ]*$")
+ @Pattern(regexp = "^[a-z A-Z  ]*$")
  private String alphabetSei;
 
  @NotBlank
  @Size(max = 120)
- @Pattern(regexp = "^[A-Z  ]*$")
+ @Pattern(regexp = "^[a-z A-Z  ]*$")
  private String alphabetMei;
 
 
@@ -57,12 +57,12 @@ public class CardOrderForm extends FormBase {
 
  @NotBlank
  @Size(max = 10)
- @Pattern(regexp = "\\d{1,2}$")
+ @Pattern(regexp = "\\d{2}$")
  private String dateOfBirth2;
 
  @NotBlank
  @Size(max = 10)
- @Pattern(regexp = "\\d{1,2}$")
+ @Pattern(regexp = "\\d{2}$")
  private String dateOfBirth3;
 
 
