@@ -117,11 +117,9 @@ public class CardOrderForm extends FormBase {
 
     @NotBlank
     @Size(max = 255)
-    @Email
     private String emailAddress1;
  @NotBlank
  @Size(max = 255)
- @Email
  private String emailAddress2;
     @NotBlank
     @Size(max = 20)

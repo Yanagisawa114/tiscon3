@@ -39,7 +39,7 @@
                             <div class="field" th:classappend="${form.hasErrors('employerZipCode1')} ? 'error'">
                                 <label>お勤め先郵便番号（半角）</label>
                                 <input type="text" class="number3" name="employerZipCode1" th:value="${form.employerZipCode1}"/>
-                            -<input type="text" class="number3" name="employerZipCode2" th:value="${form.employerZipCode2}"/>
+                            ー <input type="text" class="number3" name="employerZipCode2" th:value="${form.employerZipCode2}"/>
                             </div>
                             <ul class="ui red basic label" th:if="${form.hasErrors('employerZipCode1')}">
                                 <li th:text="${form.getErrors('employerZipCode1')[0]}"></li>
@@ -57,8 +57,8 @@
                             <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber1')} ? 'error'">
                                 <label>お勤め先電話番号（半角）</label>
                                 <input type="text" class="number3" name="employerPhoneNumber1" th:value="${form.employerPhoneNumber1}"/>
-                                -<input type="text" class="number3" name="employerPhoneNumber2" th:value="${form.employerPhoneNumber2}"/>
-                                -<input type="text" class="number3" name="employerPhoneNumber3" th:value="${form.employerPhoneNumber3}"/>
+                                ー <input type="text" class="number3" name="employerPhoneNumber2" th:value="${form.employerPhoneNumber2}"/>
+                                ー <input type="text" class="number3" name="employerPhoneNumber3" th:value="${form.employerPhoneNumber3}"/>
                             </div>
                             <ul class="ui red basic label" th:if="${form.hasErrors('employerPhoneNumber1')}">
                                 <li th:text="${form.getErrors('')[employerPhoneNumber10]}"></li>
