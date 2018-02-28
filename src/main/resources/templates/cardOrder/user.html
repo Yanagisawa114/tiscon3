@@ -30,7 +30,7 @@
 
                             <div class="field" th:classappend="${form.hasErrors('kanjiSei')} ? 'error'">
                                 <label>お名前（漢字）</label>
-                                      性　<input type="text" class="number2" name="kanjiSei" th:value="${form.kanjiSei}"/>
+                                      姓　<input type="text" class="number2" name="kanjiSei" th:value="${form.kanjiSei}"/>
                                     　例）山田
                             </div>
 
@@ -49,7 +49,7 @@
 
                             <div class="field" th:classappend="${form.hasErrors('kanaSei')} ? 'error'">
                                 <label>お名前（カナ：全角）</label>
-                                性　<input type="text" class="number2" name="kanaSei" th:value="${form.kanaSei}"/>
+                                姓　<input type="text" class="number2" name="kanaSei" th:value="${form.kanaSei}"/>
                             　例）ヤマダ
                             </div>
 
@@ -69,7 +69,7 @@
 
                             <div class="field" th:classappend="${form.hasErrors('alphabetSei')} ? 'error'">
                                 <label>お名前（ローマ字）</label>
-                                性
+                                姓
                                 <input type="text" class="number2" name="alphabetSei" th:value="${form.alphabetSei}"/>
                             例）YAMADA
                             </div>
